@@ -1,2 +1,7 @@
 
 /htmlcov/
+.idea/workspace.xml
+api/__pycache__/
+api/migrations/__pycache__/
+hotlemon/__pycache__/
+templates/
