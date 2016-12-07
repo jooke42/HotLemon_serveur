@@ -7,9 +7,10 @@ class Component(models.Model):
     author = models.ForeignKey(User)
 
     @classmethod
-    def create(cls, _title):
-        component = cls(title=_title)
+    def create(cls, _title, _user):
+        component = cls(title=_title, author=_user)
         return component
 
     class Meta:
+
         app_label = 'api'

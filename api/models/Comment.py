@@ -6,11 +6,12 @@ from api.models.Topic import Topic
 class Comment(models.Model):
     author = models.ForeignKey(User)
     body = models.TextField()
-    topic = models.ForeignKey(Topic,null=False, default=Topic(), blank=True)
-    parent_comment = models.ForeignKey('self', null=True)
+    topic = models.ForeignKey(Topic, null=False)
+    parent_comment = models.ForeignKey('self', blank=True, null=True)
+
     @classmethod
-    def create(cls, _author, _body):
-        comment = cls(author=_author, body=_body)
+    def create(cls, _author, _body, _topic):
+        comment = cls(author=_author, body=_body, topic=_topic)
         return comment
 
     class Meta:
