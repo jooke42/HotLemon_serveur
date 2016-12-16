@@ -12,6 +12,8 @@ Voir le site de [Django](https://www.djangoproject.com/) et de [REST Framework](
 4. Créer une branche personnel et faire un checkout sur cette branche.
 ##Démarrer le service django
 dossier courant: hotlemon
-1. Python manage.py makemigrations
-2. Python manage.py migrate
-3. python manage.py runserver
+1. create a virtual environment 
+1. pip install -r requirements.txt
+2. python manage.py makemigrations
+3. python manage.py migrate
+4. python manage.py runserver
