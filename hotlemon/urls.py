@@ -25,6 +25,7 @@ router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'topics', views.TopicViewSet)
 router.register(r'comments', views.CommentViewSet)
+router.register(r'categories', views.CategoryViewSet)
 admin.site.register(Topic)
 admin.site.register(Comment)
 urlpatterns = [

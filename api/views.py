@@ -43,3 +43,11 @@ class ComponentViewSet(viewsets.ModelViewSet):
     """
     queryset = Component.objects.all()
     serializer_class = ComponentSerializer
+
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    """
+        API endpoint that allows groups to be viewed or edited.
+        """
+    queryset = Component.objects.all()
+    serializer_class = ComponentSerializer

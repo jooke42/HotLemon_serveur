@@ -12,5 +12,4 @@ class Component(models.Model):
         return component
 
     class Meta:
-
         app_label = 'api'
