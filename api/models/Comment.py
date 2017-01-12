@@ -9,10 +9,5 @@ class Comment(models.Model):
     topic = models.ForeignKey(Topic, null=False)
     parent_comment = models.ForeignKey('self', blank=True, null=True)
 
-    @classmethod
-    def create(cls, _author, _body, _topic):
-        comment = cls(author=_author, body=_body, topic=_topic)
-        return comment
-
     class Meta:
         app_label = 'api'

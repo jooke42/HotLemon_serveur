@@ -10,10 +10,5 @@ class Topic(models.Model):
     published_date = models.DateTimeField
     finished_date = models.DateTimeField
 
-    @classmethod
-    def create(cls):
-        topic = cls()
-        return topic
-
     class Meta:
         app_label = 'api'

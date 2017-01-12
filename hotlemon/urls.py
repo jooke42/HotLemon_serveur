@@ -18,18 +18,21 @@ from django.conf.urls import url, include
 from rest_framework import routers
 from api.models.Topic import Topic
 from api.models.Comment import Comment
-from api import views
+import api.views
+from rest_framework.authtoken import views
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
-router.register(r'topics', views.TopicViewSet)
-router.register(r'comments', views.CommentViewSet)
-router.register(r'categories', views.CategoryViewSet)
+router.register(r'users', api.views.UserViewSet)
+router.register(r'groups', api.views.GroupViewSet)
+router.register(r'topics', api.views.TopicViewSet)
+router.register(r'comments', api.views.CommentViewSet)
+router.register(r'categories', api.views.CategoryViewSet)
 admin.site.register(Topic)
 admin.site.register(Comment)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^admin/', admin.site.urls),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api-token-auth/', views.obtain_auth_token),
 ]
+
