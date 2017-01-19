@@ -29,6 +29,7 @@ router.register(r'comments', api.views.CommentViewSet)
 router.register(r'categories', api.views.CategoryViewSet)
 admin.site.register(Topic)
 admin.site.register(Comment)
+
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^admin/', admin.site.urls),

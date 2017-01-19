@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from api.models import Comment, Topic, Component
+from api.models import Comment, Topic, Category, News
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -27,7 +27,16 @@ class CommentSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('author', 'body', 'topic', 'parent_comment')
 
 
-class ComponentSerializer(serializers.HyperlinkedModelSerializer):
+class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Component
-        fields = ('title', 'author')
+        model = Category
+        fields = ('name', 'description', 'topics', 'parent_comment')
+
+
+class NewSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = News
+        fields = 'picture'
+
+
+

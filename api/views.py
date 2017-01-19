@@ -2,7 +2,7 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from api.serializers import UserSerializer, GroupSerializer, TopicSerializer, CommentSerializer, ComponentSerializer
-from api.models import Comment, Topic, Component
+from api.models import Comment, Topic, Category, News
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -37,17 +37,17 @@ class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
 
 
-class ComponentViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = Component.objects.all()
-    serializer_class = ComponentSerializer
-
-
 class CategoryViewSet(viewsets.ModelViewSet):
     """
         API endpoint that allows groups to be viewed or edited.
         """
-    queryset = Component.objects.all()
+    queryset = Category.objects.all()
+    serializer_class = ComponentSerializer
+
+
+class NewsViewSet(viewsets.ModelViewSet):
+    """
+        API endpoint that allows groups to be viewed or edited.
+        """
+    queryset = News.objects.all()
     serializer_class = ComponentSerializer

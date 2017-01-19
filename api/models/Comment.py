@@ -9,5 +9,8 @@ class Comment(models.Model):
     topic = models.ForeignKey(Topic, null=False)
     parent_comment = models.ForeignKey('self', blank=True, null=True)
 
+    def get_username(self):
+        return self.username
+
     class Meta:
         app_label = 'api'

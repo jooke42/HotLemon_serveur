@@ -1,4 +1,3 @@
-from api.models.Component import Component
-from api.models.Comment import Comment
-from api.models.Topic import Topic
-__all__ = ['Component', 'Comment', 'Topic']
+from api.models import Comment, Topic, Category, News
+
+__all__ = ['Comment', 'Topic', 'Category', 'News', 'Address']

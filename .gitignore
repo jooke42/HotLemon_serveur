@@ -6,3 +6,7 @@ api/migrations/
 hotlemon/__pycache__/
 templates/
 api/models/__pycache__/
+/hotlemon/settings.py
+.cache/
+api/managers/__pycache__/
+api/tests/__pycache__/
