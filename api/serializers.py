@@ -33,7 +33,7 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
         fields = ('name', 'description', 'topics', 'parent_comment')
 
 
-class NewSerializer(serializers.HyperlinkedModelSerializer):
+class NewsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = News
         fields = 'picture'

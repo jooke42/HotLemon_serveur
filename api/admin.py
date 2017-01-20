@@ -1,4 +1,5 @@
 from django.contrib import admin
+from api.models.News import News
 from api.models.Topic import Topic
 from api.models.Comment import Comment
 
@@ -11,4 +12,5 @@ class TopicAdmin(Topic):
     pass
 
 
-# Register your models here.
+class NewsAdmin(News):
+    pass

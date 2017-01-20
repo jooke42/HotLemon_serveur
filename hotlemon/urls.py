@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.conf.urls import url, include
 from rest_framework import routers
 from api.models.Topic import Topic
+from api.models.News import News
 from api.models.Comment import Comment
 import api.views
 from rest_framework.authtoken import views
+import hotlemon.settings
 
 router = routers.DefaultRouter()
 router.register(r'users', api.views.UserViewSet)
@@ -27,7 +29,9 @@ router.register(r'groups', api.views.GroupViewSet)
 router.register(r'topics', api.views.TopicViewSet)
 router.register(r'comments', api.views.CommentViewSet)
 router.register(r'categories', api.views.CategoryViewSet)
+router.register(r'news', api.views.NewsViewSet)
 admin.site.register(Topic)
+admin.site.register(News)
 admin.site.register(Comment)
 
 urlpatterns = [
@@ -35,5 +39,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^api-token-auth/', views.obtain_auth_token),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': hotlemon.settings.MEDIA_ROOT, 'show_indexes': False}),
+
 ]
 
