@@ -16,4 +16,6 @@ dossier courant: hotlemon
 1. pip install -r requirements.txt
 2. python manage.py makemigrations
 3. python manage.py migrate
-4. python manage.py runserver
+4. python manage.py collectstatic
+5. python manage.py createsuperuser
+6. python manage.py runserver
