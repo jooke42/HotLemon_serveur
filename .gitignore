@@ -10,3 +10,5 @@ api/models/__pycache__/
 .cache/
 api/managers/__pycache__/
 api/tests/__pycache__/
+static/*
+!static/.gitkeep
