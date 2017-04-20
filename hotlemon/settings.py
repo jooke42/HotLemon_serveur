@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import hotlemon.param
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +27,7 @@ STATICFILES_DIRS = (
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ln3o)!=i0m!s@b+8az861t4m$d!+tjdyc^#+m1*a3a&b%l)4^@'
+SECRET_KEY = hotlemon.param.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -116,16 +117,7 @@ if 'TRAVIS' in os.environ:
         }
     }
 else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'hotlemon',
-            'USER': 'hotlemonuser',
-            'PASSWORD': 'hotlemon',
-            'HOST': '127.0.0.1',
-            'PORT': '5432',
-        }
-    }
+    DATABASES = hotlemon.param.DATABASES
 
 
 # Password validation
@@ -150,7 +142,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-FR'
 
 TIME_ZONE = 'UTC'
 
