@@ -8,7 +8,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-import hotlemon.param
+if 'TRAVIS' not in os.environ:
+    from hotlemon import param
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,7 +28,10 @@ STATICFILES_DIRS = (
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = hotlemon.param.SECRET_KEY
+if 'TRAVIS' in os.environ:
+    SECRET_KEY = 'ln3o)!=i0m!s@b+8az861t4m$d!+tjdyc^#+m1*a3a&b%l)4^@'
+else:
+    SECRET_KEY = param.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -117,7 +121,7 @@ if 'TRAVIS' in os.environ:
         }
     }
 else:
-    DATABASES = hotlemon.param.DATABASES
+    DATABASES = param.DATABASES
 
 
 # Password validation
