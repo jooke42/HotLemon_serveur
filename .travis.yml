@@ -22,5 +22,5 @@ before_script:
   - psql -c "CREATE DATABASE travisci;" -U postgres
 
 script:
-  - python manage.py syncdb --noinput
+  - python manage.py syncdb --all --noinput
   - pytest
