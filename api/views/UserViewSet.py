@@ -12,3 +12,4 @@ class UserViewSet(viewsets.ModelViewSet):
 
     class Meta:
         app_label = 'api'
+        model = User

@@ -12,3 +12,4 @@ class TopicViewSet(viewsets.ModelViewSet):
 
     class Meta:
         app_label = 'api'
+        model = Topic

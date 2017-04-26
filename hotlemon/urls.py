@@ -19,26 +19,34 @@ from rest_framework import routers
 from api.models.Topic import Topic
 from api.models.News import News
 from api.models.Comment import Comment
-import api.views
+from api.models.Category import Category
+
+from api.views.UserViewSet import UserViewSet
+from api.views.GroupViewSet import GroupViewSet
+from api.views.TopicViewSet import TopicViewSet
+from api.views.CommentViewSet import CommentViewSet
+from api.views.CategoryViewSet import CategoryViewSet
+from api.views.NewsViewSet import NewsViewSet
+
 import hotlemon.settings
 
 router = routers.DefaultRouter()
-router.register(r'users', api.views.UserViewSet, 'User')
-router.register(r'groups', api.views.GroupViewSet, 'Group')
-router.register(r'topics', api.views.TopicViewSet, 'Topic')
-router.register(r'comments', api.views.CommentViewSet, 'Comment')
-router.register(r'categories', api.views.CategoryViewSet, 'Category')
-router.register(r'news', api.views.NewsViewSet, 'News')
+router.register(r'users', UserViewSet)
+router.register(r'groups', GroupViewSet)
+router.register(r'topics', TopicViewSet)
+router.register(r'comments', CommentViewSet)
+router.register(r'categories', CategoryViewSet)
+router.register(r'news', NewsViewSet)
 admin.site.register(Topic)
 admin.site.register(News)
 admin.site.register(Comment)
-
+admin.site.register(Category)
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^auth/', include('rest_framework_social_oauth2.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', admin.site.urls),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',{'document_root': hotlemon.settings.MEDIA_ROOT, 'show_indexes': False}),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': hotlemon.settings.MEDIA_ROOT, 'show_indexes': False}),
 
 ]
 

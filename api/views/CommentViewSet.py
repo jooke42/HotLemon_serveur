@@ -12,3 +12,4 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     class Meta:
         app_label = 'api'
+        model = Comment
