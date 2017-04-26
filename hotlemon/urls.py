@@ -23,12 +23,12 @@ import api.views
 import hotlemon.settings
 
 router = routers.DefaultRouter()
-router.register(r'users', api.views.UserViewSet)
-router.register(r'groups', api.views.GroupViewSet)
-router.register(r'topics', api.views.TopicViewSet)
-router.register(r'comments', api.views.CommentViewSet)
-router.register(r'categories', api.views.CategoryViewSet)
-router.register(r'news', api.views.NewsViewSet)
+router.register(r'users', api.views.UserViewSet, 'User')
+router.register(r'groups', api.views.GroupViewSet, 'Group')
+router.register(r'topics', api.views.TopicViewSet, 'Topic')
+router.register(r'comments', api.views.CommentViewSet, 'Comment')
+router.register(r'categories', api.views.CategoryViewSet, 'Category')
+router.register(r'news', api.views.NewsViewSet, 'News')
 admin.site.register(Topic)
 admin.site.register(News)
 admin.site.register(Comment)
