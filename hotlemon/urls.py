@@ -25,6 +25,7 @@ from api.views.CommentViewSet import CommentViewSet
 from api.views.CategoryViewSet import CategoryViewSet
 from api.views.NewsViewSet import NewsViewSet
 from api.views.AddressViewset import AddressViewSet
+from api.views.EventViewSet import EventViewSet
 import hotlemon.settings
 
 router = routers.DefaultRouter()
@@ -35,6 +36,7 @@ router.register(r'comments', CommentViewSet)
 router.register(r'categories', CategoryViewSet)
 router.register(r'news', NewsViewSet)
 router.register(r'address', AddressViewSet)
+router.register(r'events', EventViewSet)
 admin.site.register(Topic)
 admin.site.register(News)
 admin.site.register(Comment)

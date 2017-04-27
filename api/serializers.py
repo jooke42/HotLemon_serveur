@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from api.models import Comment, Topic, Category, News
+from api.models import Comment, Topic, Category, News, Address, Event
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -33,6 +33,16 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
 class NewsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = News
+
+
+class AddressSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Address
+
+
+class EventSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Event
 
 
 
