@@ -7,7 +7,7 @@ class TopicViewSet(viewsets.ModelViewSet):
     """
         API endpoint that allows groups to be viewed or edited.
         """
-    queryset = Topic.Topic.objects.all()
+    queryset = Topic.objects.all()
     serializer_class = TopicSerializer
 
     class Meta:

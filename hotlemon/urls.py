@@ -16,10 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 from rest_framework import routers
-from api.models.Topic import Topic
-from api.models.News import News
-from api.models.Comment import Comment
-from api.models.Category import Category
+from api.models import *
 
 from api.views.UserViewSet import UserViewSet
 from api.views.GroupViewSet import GroupViewSet
@@ -27,7 +24,7 @@ from api.views.TopicViewSet import TopicViewSet
 from api.views.CommentViewSet import CommentViewSet
 from api.views.CategoryViewSet import CategoryViewSet
 from api.views.NewsViewSet import NewsViewSet
-
+from api.views.AddressViewset import AddressViewSet
 import hotlemon.settings
 
 router = routers.DefaultRouter()
@@ -37,6 +34,7 @@ router.register(r'topics', TopicViewSet)
 router.register(r'comments', CommentViewSet)
 router.register(r'categories', CategoryViewSet)
 router.register(r'news', NewsViewSet)
+router.register(r'address', AddressViewSet)
 admin.site.register(Topic)
 admin.site.register(News)
 admin.site.register(Comment)

@@ -10,8 +10,5 @@ class Topic(models.Model):
     published_date = models.DateTimeField
     finished_date = models.DateTimeField
 
-    def get_username(self):
-        return self.username
-
     class Meta:
         app_label = 'api'

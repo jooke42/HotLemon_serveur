@@ -9,8 +9,5 @@ class Address(models.Model):
     street = models.CharField(max_length=60)
     postalCode = models.CharField(max_length=5)
 
-    def get_username(self):
-        return self.username
-
     class Meta:
         app_label = 'api'

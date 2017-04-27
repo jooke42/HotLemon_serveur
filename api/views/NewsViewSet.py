@@ -7,7 +7,7 @@ class NewsViewSet(viewsets.ModelViewSet):
     """
         API endpoint that allows groups to be viewed or edited.
         """
-    queryset = News.News.objects.all()
+    queryset = News.objects.all()
     serializer_class = NewsSerializer
 
     class Meta:
