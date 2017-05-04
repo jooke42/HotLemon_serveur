@@ -8,6 +8,7 @@ class Comment(models.Model):
     body = models.TextField(max_length=140)
     topic = models.ForeignKey(Topic, null=False)
     parent_comment = models.ForeignKey('self', blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         app_label = 'api'

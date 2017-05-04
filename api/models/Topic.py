@@ -9,6 +9,7 @@ class Topic(models.Model):
     body = models.TextField(max_length=500)
     published_date = models.DateTimeField
     finished_date = models.DateTimeField
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         app_label = 'api'

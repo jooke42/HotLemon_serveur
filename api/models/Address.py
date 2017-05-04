@@ -8,6 +8,7 @@ class Address(models.Model):
     streetNumber = models.CharField(max_length=5)
     street = models.CharField(max_length=60)
     postalCode = models.CharField(max_length=5)
+    created = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         app_label = 'api'
