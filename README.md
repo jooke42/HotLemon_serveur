@@ -19,3 +19,11 @@ dossier courant: hotlemon
 4. python manage.py collectstatic
 5. python manage.py createsuperuser
 6. python manage.py runserver
+
+## Tuto Git - Pour commit
+1. git status
+2. git commit -m "Insert message here"
+3. git push
+
+# Tuto Git - Pour update
+1. git pull

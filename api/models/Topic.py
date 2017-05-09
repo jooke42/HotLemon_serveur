@@ -10,6 +10,8 @@ class Topic(models.Model):
     published_date = models.DateTimeField
     finished_date = models.DateTimeField
     created = models.DateTimeField(auto_now_add=True)
+    vote_for = models.IntegerField(default=0)
+    vote_against = models.IntegerField(default=0)
 
     class Meta:
         app_label = 'api'

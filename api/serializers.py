@@ -33,6 +33,7 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
 class NewsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = News
+        fields = ('title', 'author', 'body', 'picture')
 
 
 class AddressSerializer(serializers.HyperlinkedModelSerializer):
@@ -43,6 +44,7 @@ class AddressSerializer(serializers.HyperlinkedModelSerializer):
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Event
+        fields = ('title', 'author', 'body', 'place')
 
 
 
