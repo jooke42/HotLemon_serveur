@@ -1,6 +1,11 @@
 from rest_framework import viewsets
 from django.contrib.auth.models import User
 from api.serializers import UserSerializer
+from rest_framework.pagination import CursorPagination
+
+
+class CustomCursor(CursorPagination):
+    ordering = 'date_joined'
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -9,6 +14,7 @@ class UserViewSet(viewsets.ModelViewSet):
         """
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    pagination_class = CustomCursor
 
     class Meta:
         app_label = 'api'
