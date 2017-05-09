@@ -37,16 +37,18 @@ router.register(r'categories', CategoryViewSet)
 router.register(r'news', NewsViewSet)
 router.register(r'address', AddressViewSet)
 router.register(r'events', EventViewSet)
+
 admin.site.register(Topic)
 admin.site.register(News)
 admin.site.register(Comment)
 admin.site.register(Category)
+
 urlpatterns = [
     url(r'^', include(router.urls)),
-    url(r'^auth/', include('rest_framework_social_oauth2.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': hotlemon.settings.MEDIA_ROOT, 'show_indexes': False}),
-
 ]
 
