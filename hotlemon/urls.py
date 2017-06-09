@@ -26,7 +26,9 @@ from api.views.CategoryViewSet import CategoryViewSet
 from api.views.NewsViewSet import NewsViewSet
 from api.views.AddressViewset import AddressViewSet
 from api.views.EventViewSet import EventViewSet
+from allauth.account.views import confirm_email as allauthemailconfirmation
 import hotlemon.settings
+import re
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -48,7 +50,8 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^rest-auth/', include('rest_auth.urls')),
     url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+    url(r'^rest-auth/registration/account-confirm-email/(?P<key>\w+)/$', allauthemailconfirmation,name="account_confirm_email"),
     url(r'^admin/', admin.site.urls),
-    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': hotlemon.settings.MEDIA_ROOT, 'show_indexes': False}),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
+        {'document_root': hotlemon.settings.MEDIA_ROOT, 'show_indexes': False}),
 ]
-
