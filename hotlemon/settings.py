@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework.authtoken',
     'api',
     'rest_framework',
@@ -80,6 +81,8 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware'
 ]
 AUTHENTICATION_BACKENDS = (
    'django.contrib.auth.backends.ModelBackend',
@@ -150,6 +153,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'fr-FR'
 
+CORS_ORIGIN_ALLOW_ALL = True
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -167,3 +172,5 @@ EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = EMAIL_HOST
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+
