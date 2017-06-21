@@ -13,12 +13,8 @@ class Topic(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     vote_for = models.IntegerField(default=0)
     vote_against = models.IntegerField(default=0)
-    country = models.CharField(max_length=50)
-    region = models.CharField(max_length=50)
-    city = models.CharField(max_length=50)
-    streetNumber = models.CharField(max_length=5)
-    street = models.CharField(max_length=60)
-    postalCode = models.CharField(max_length=5)
+    latitude = models.FloatField(max_length=50, null=True, blank=True)
+    longitude = models.FloatField(max_length=50, null=True, blank=True)
 
     class Meta:
         app_label = 'api'
