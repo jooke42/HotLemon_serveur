@@ -14,3 +14,4 @@ api/tests/__pycache__/
 static/*
 !static/.gitkeep
 /hotlemon/param.py
+venv/*
