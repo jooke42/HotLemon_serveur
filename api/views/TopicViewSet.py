@@ -1,6 +1,11 @@
 from rest_framework import viewsets
 from api.models import Topic
 from api.serializers import TopicSerializer
+from rest_framework.pagination import CursorPagination
+
+
+class CustomCursor(CursorPagination):
+    ordering = 'vote_for'
 
 
 class TopicViewSet(viewsets.ModelViewSet):

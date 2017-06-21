@@ -23,12 +23,8 @@ from api.views.GroupViewSet import GroupViewSet
 from api.views.TopicViewSet import TopicViewSet
 from api.views.CommentViewSet import CommentViewSet
 from api.views.CategoryViewSet import CategoryViewSet
-from api.views.NewsViewSet import NewsViewSet
-from api.views.AddressViewset import AddressViewSet
-from api.views.EventViewSet import EventViewSet
 from allauth.account.views import confirm_email as allauthemailconfirmation
 import hotlemon.settings
-import re
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet)
@@ -36,12 +32,8 @@ router.register(r'groups', GroupViewSet)
 router.register(r'topics', TopicViewSet)
 router.register(r'comments', CommentViewSet)
 router.register(r'categories', CategoryViewSet)
-router.register(r'news', NewsViewSet)
-router.register(r'address', AddressViewSet)
-router.register(r'events', EventViewSet)
 
 admin.site.register(Topic)
-admin.site.register(News)
 admin.site.register(Comment)
 admin.site.register(Category)
 
