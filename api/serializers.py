@@ -18,7 +18,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class TopicSerializer(serializers.HyperlinkedModelSerializer):
     author = serializers.SlugRelatedField(
         many=False,
-        read_only=False,
+        read_only=True,
         slug_field='username'
     )
 
