@@ -19,7 +19,7 @@ class TopicSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Topic
-        fields = ('title', 'author', 'body', 'picture', 'vote_for', 'vote_against', 'longitude', 'latitude')
+        fields = ('id', 'title', 'author', 'body', 'picture', 'vote_for', 'vote_against', 'longitude', 'latitude')
 
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
