@@ -16,7 +16,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
         
         
 class TopicSerializer(serializers.HyperlinkedModelSerializer):
-    author = serializers.SlugRelatedField(
+    author_username = serializers.SlugRelatedField(
         many=False,
         read_only=True,
         slug_field='username'
@@ -24,7 +24,7 @@ class TopicSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Topic
-        fields = ('id', 'title', 'author', 'body', 'picture', 'vote_for', 'vote_against', 'longitude', 'latitude')
+        fields = ('id', 'title', 'author', 'author_username', 'body', 'picture', 'vote_for', 'vote_against', 'longitude', 'latitude')
 
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
